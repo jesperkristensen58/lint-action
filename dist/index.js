@@ -10236,7 +10236,7 @@ async function runAction() {
 			if (linterAutoFix && commit) {
 				// Commit and push auto-fix changes
 				if (git.hasChanges()) {
-					git.commitChanges(commitMessage.replace(/\${linter}/g, linter.name), skipVerification);
+					git.commitChanges("fix: linting", linter.name), skipVerification);
 					git.pushChanges(skipVerification);
 				}
 			}
